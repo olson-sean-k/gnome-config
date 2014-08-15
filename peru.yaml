@@ -1,10 +1,17 @@
 imports:
-  ext-multiple-monitor-panels: extensions/
+  shell-multiple-monitor-panels: gnome-shell/extensions/
+  term-colors-solarized: gnome-terminal/
 
-git module ext-multiple-monitor-panels:
+git module shell-multiple-monitor-panels:
   url: https://github.com/jbladen/multiple-monitor-panels.git
-  rev: gnome-3.10
-  build: mkdir out && cp -R extra-panels@darkxst.feathertop.org out/
-  export: out
+  rev: 943c128b0dc0766d89da9547f738dc3e48645972
+  files:
+    - extra-panels@darkxst.feathertop.org
+
+git module term-colors-solarized:
+  url: https://github.com/Anthony25/gnome-terminal-colors-solarized.git
+  rev: dd88b075dde4e015432bbb45754511cc4176e0c0
+  files:
+    - colors
 
 build: ./install.sh

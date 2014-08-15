@@ -17,9 +17,7 @@ realpath() {
   )
 }
 
-repo_root=$(dirname $(realpath $BASH_SOURCE))
+export REPO_ROOT="$(dirname $(realpath $BASH_SOURCE))"
 
-# Link Gnome Shell extensions.
-ln -s \
-  "$repo_root/extensions/extra-panels@darkxst.feathertop.org" \
-  ~/.local/share/gnome-shell/extensions/extra-panels@darkxst.feathertop.org
+"$REPO_ROOT/install-gnome-shell.sh"
+"$REPO_ROOT/install-gnome-terminal.sh"
