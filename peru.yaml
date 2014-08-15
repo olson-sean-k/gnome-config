@@ -1,0 +1,9 @@
+imports:
+  ext-multiple-monitor-panels: extensions/
+
+git module ext-multiple-monitor-panels:
+  url: https://github.com/jbladen/multiple-monitor-panels.git
+  rev: master
+  export: extra-panels@darkxst.feathertop.org
+
+build: ./install.sh
