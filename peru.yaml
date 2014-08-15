@@ -4,6 +4,7 @@ imports:
 git module ext-multiple-monitor-panels:
   url: https://github.com/jbladen/multiple-monitor-panels.git
   rev: gnome-3.10
-  export: extra-panels@darkxst.feathertop.org
+  build: mkdir out && cp -R extra-panels@darkxst.feathertop.org out/
+  export: out
 
 build: ./install.sh
