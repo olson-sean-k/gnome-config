@@ -2,24 +2,24 @@
 
 realpath() {
   (
-    TARGET_FILE="$1"
-    cd "$(dirname "$TARGET_FILE")"
-    TARGET_FILE="$(basename "$TARGET_FILE")"
+    target_file="$1"
+    cd "$(dirname "$target_file")"
+    target_file="$(basename "$target_file")"
 
-    while [ -L "$TARGET_FILE" ]; do
-      TARGET_FILE="$(readlink "$TARGET_FILE")"
-      cd "$(dirname "$TARGET_FILE")"
-      TARGET_FILE="$(basename "$TARGET_FILE")"
+    while [ -L "$target_file" ]; do
+      target_file="$(readlink "$target_file")"
+      cd "$(dirname "$target_file")"
+      target_file="$(basename "$target_file")"
     done
 
-    PHYS_DIR="$(pwd -P)"
-    echo "$PHYS_DIR/$TARGET_FILE"
+    phys_dir="$(pwd -P)"
+    echo "$phys_dir/$target_file"
   )
 }
 
-REPO_ROOT=$(dirname $(realpath $BASH_SOURCE))
+repo_root=$(dirname $(realpath $BASH_SOURCE))
 
 # Link Gnome Shell extensions.
 ln -s \
-  "$REPO_ROOT/extensions/extra-panels@darkxst.feathertop.org" \
+  "$repo_root/extensions/extra-panels@darkxst.feathertop.org" \
   ~/.local/share/gnome-shell/extensions/extra-panels@darkxst.feathertop.org
