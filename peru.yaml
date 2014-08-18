@@ -13,5 +13,3 @@ git module term-colors-solarized:
   rev: dd88b075dde4e015432bbb45754511cc4176e0c0
   files:
     - colors
-
-build: ./install.sh

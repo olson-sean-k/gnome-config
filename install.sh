@@ -17,6 +17,9 @@ realpath() {
   )
 }
 
+# TODO: This could be done in a script that could also bootstrap peru.
+peru sync
+
 export REPO_ROOT="$(dirname $(realpath $BASH_SOURCE))"
 
 "$REPO_ROOT/install-gnome-shell.sh"
