@@ -26,3 +26,4 @@ export REPO_ROOT="$(dirname $(realpath $BASH_SOURCE))"
 
 "$REPO_ROOT/install-gnome-shell.sh"
 "$REPO_ROOT/install-gnome-terminal.sh"
+"$REPO_ROOT/install-xdg-user-dirs.sh"
